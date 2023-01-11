@@ -1,23 +1,15 @@
-public class AtividadeCurso extends Bootcamp {
-    private String titulo;
-    private String descricao;
+public class AtividadeCurso extends Conteudo {
+    
     private int cargaHoraria;
-   
+    
+    @Override
+    public double calcularXp() {
+        return XP_PADRAO * cargaHoraria;
+    }
+
     public AtividadeCurso() {
     }
     
-    public String getTitulo() {
-        return titulo;
-    }
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-    public String getDescricao() {
-        return descricao;
-    }
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
     public int getCargaHoraria() {
         return cargaHoraria;
     }
@@ -26,8 +18,10 @@ public class AtividadeCurso extends Bootcamp {
     }
     @Override
     public String toString() {
-        return "AtividadeCurso [titulo=" + titulo + ", descricao=" + descricao + ", cargaHoraria=" + cargaHoraria + "]";
+        return "AtividadeCurso [titulo=" + getTitulo() + ", descricao=" + getDescricao() + ", cargaHoraria=" + cargaHoraria + "]";
     }
 
+
+    
     
 }
