@@ -9,7 +9,7 @@ public class AtividadeCurso extends Conteudo {
 
     public AtividadeCurso() {
     }
-    
+
     public int getCargaHoraria() {
         return cargaHoraria;
     }
@@ -18,7 +18,7 @@ public class AtividadeCurso extends Conteudo {
     }
     @Override
     public String toString() {
-        return "AtividadeCurso [titulo=" + getTitulo() + ", descricao=" + getDescricao() + ", cargaHoraria=" + cargaHoraria + "]";
+        return "{Curso: Título = " + getTitulo() + ", Descrição = " + getDescricao() + ", Carga Horária = " + cargaHoraria + "h}";
     }
 
 

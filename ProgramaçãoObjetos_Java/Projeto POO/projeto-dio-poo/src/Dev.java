@@ -13,16 +13,28 @@ public class Dev {
     bootcamp.getDevsInscritos().add(this);
     }
 
+
     public void progredir(){
         Optional<Conteudo> conteudo = this.conteudosInscritos.stream().findFirst();
         if(conteudo.isPresent()){
             this.conteudosConcluidos.add(conteudo.get());
             this.conteudosInscritos.remove(conteudo.get());
+    
         } else {
             System.err.println("Você não está inscrito em nenhum conteúdo!");
         }
     }
     
+    public void statusDev(){
+        Optional<Conteudo> conteudo1 = this.conteudosInscritos.stream().findAny();
+        Optional<Conteudo> conteudo2 = this.conteudosConcluidos.stream().findAny();
+        
+        if (conteudo1.isEmpty() && conteudo2.isEmpty()) System.out.println("Inscrição no Bootcamp não realizada.");
+        if (conteudo1.isEmpty() && conteudo2.isPresent()) System.out.println("Bootcamp concluído!");
+        if (conteudo1.isPresent() && conteudo2.isPresent()) System.out.println("Bootcamp em andamento.");
+        if (conteudo1.isPresent() && conteudo2.isEmpty()) System.out.println("Atividades do Bootcamp não iniciadas.");
+    }
+
     public double calcularTotalXp(){
         return this.conteudosConcluidos.stream()
         .mapToDouble(conteudo -> conteudo.calcularXp())

@@ -11,7 +11,7 @@ public class Bootcamp {
     private Set<Dev> devsInscritos = new HashSet<>();
     private Set<Conteudo> conteudos = new LinkedHashSet<>();
 
-    public String getNome() {
+   public String getNome() {
         return nome;
     }
     public void setNome(String nome) {
@@ -96,6 +96,11 @@ public class Bootcamp {
             return false;
         return true;
     }
+    @Override
+    public String toString() {
+        return "Bootcamp - " + nome + ", Descrição: " + descricao;
+    }
 
+    
     
 }
